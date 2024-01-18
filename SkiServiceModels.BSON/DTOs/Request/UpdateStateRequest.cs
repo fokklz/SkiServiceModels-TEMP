@@ -6,26 +6,18 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace SkiServiceModels.BSON.DTOs.Request
 {
-    public class UpdatePriority : IPriority
+    public class UpdateStateRequest : IState, IRequestDTO
     {
-        public int? Days { get; set; } = null;
+        public bool? IsDeleted { get; set; } = null;
 
         [AllowNull]
         public string Name { get; set; } = null;
 
-        public bool? IsDeleted { get; set; } = null;
-
         // Implemented properties but with allowed null values
 
-        bool IModelBase.IsDeleted
-        {
+        bool IModelBase.IsDeleted {
             get => IsDeleted ?? false;
             set => IsDeleted = value;
-        }
-
-        int IPriorityBase.Days {
-            get => Days ?? 0;
-            set => Days = value; 
         }
 
         // Hidden properties since they are not allowed to be updated

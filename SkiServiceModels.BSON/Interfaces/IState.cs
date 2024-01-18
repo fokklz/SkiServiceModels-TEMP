@@ -1,4 +1,4 @@
-﻿using SkiServiceModels.Interfaces;
+﻿using SkiServiceModels.Interfaces.Models;
 
 namespace SkiServiceModels.BSON.Interfaces
 {

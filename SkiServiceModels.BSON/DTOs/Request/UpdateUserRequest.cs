@@ -3,11 +3,12 @@ using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.Enums;
 using SkiServiceModels.Interfaces;
 using SkiServiceModels.Interfaces.Base;
+using SkiServiceModels.Interfaces.Models;
 using System.Diagnostics.CodeAnalysis;
 
 namespace SkiServiceModels.BSON.DTOs.Request
 {
-    public class UpdateUser : IUser
+    public class UpdateUserRequest : IUser, IRequestDTO
     {
         public RoleNames? Role { get; set; } = null;
 

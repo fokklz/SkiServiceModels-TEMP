@@ -1,7 +1,7 @@
 ﻿using SkiServiceModels.Enums;
 using SkiServiceModels.Interfaces.Base;
 
-namespace SkiServiceModels.Interfaces
+namespace SkiServiceModels.Interfaces.Models
 {
     public interface IUserBase : IModelBase
     {

@@ -2,16 +2,12 @@
 using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.Interfaces;
 using SkiServiceModels.Interfaces.Base;
-using System;
-using System.Collections.Generic;
+using SkiServiceModels.Interfaces.Models;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SkiServiceModels.BSON.DTOs.Request
 {
-    public class UpdateOrder : IOrder
+    public class UpdateOrderRequest : IOrder, IRequestDTO
     {
         public string? PriorityId { get; set; } = null;
 
@@ -55,7 +51,12 @@ namespace SkiServiceModels.BSON.DTOs.Request
         DateTime IOrderBase.Created { get; set; }
         ObjectId IModel.Id { get; set; }
 
-
-
+        IUser? IOrder.User { get; set; }
+        [AllowNull]
+        IState IOrder.State { get; set; }
+        [AllowNull]
+        IPriority IOrder.Priority { get; set; }
+        [AllowNull]
+        IService IOrder.Service { get; set; }
     }
 }

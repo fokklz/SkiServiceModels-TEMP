@@ -2,18 +2,22 @@
 using MongoDB.Bson.Serialization.Attributes;
 using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.BSON.Models.Base;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SkiServiceModels.BSON.Models
 {
     public class Order : Model, IOrder
     {
         [BsonElement("name")]
+        [AllowNull, NotNull]
         public string Name { get; set; }
 
         [BsonElement("email")]
+        [AllowNull, NotNull]
         public string Email { get; set; }
 
         [BsonElement("phone")]
+        [AllowNull, NotNull]
         public string Phone { get; set; }
 
         [BsonElement("priority_id")]
@@ -29,23 +33,26 @@ namespace SkiServiceModels.BSON.Models
         public ObjectId? UserId { get; set; } = null;
 
         [BsonElement("priority")]
-        public virtual Priority Priority { get; set; }
+        [AllowNull, NotNull]
+        public virtual IPriority Priority { get; set; }
         public bool ShouldSerializePriority() => false;
 
         [BsonElement("service")]
-        public virtual Service Service { get; set; }
+        [AllowNull, NotNull]
+        public virtual IService Service { get; set; }
         public bool ShouldSerializeService() => false;
 
         [BsonElement("state")]
-        public virtual State State { get; set; }
+        [AllowNull, NotNull]
+        public virtual IState State { get; set; }
         public bool ShouldSerializeState() => false;
 
         [BsonElement("user")]
-        public virtual User? User { get; set; }
+        public virtual IUser? User { get; set; }
         public bool ShouldSerializeUser() => false;
 
         [BsonElement("created")]
-        public DateTime Created { get; set; }
+        public DateTime Created { get; set; } = DateTime.Now;
 
         [BsonElement("note")]
         public string? Note { get; set; }

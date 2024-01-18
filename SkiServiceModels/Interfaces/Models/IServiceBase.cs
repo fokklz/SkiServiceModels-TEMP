@@ -1,6 +1,6 @@
 ﻿using SkiServiceModels.Interfaces.Base;
 
-namespace SkiServiceModels.Interfaces
+namespace SkiServiceModels.Interfaces.Models
 {
     public interface IServiceBase : IModelBase
     {
