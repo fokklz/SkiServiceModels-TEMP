@@ -8,19 +8,19 @@ using System.Diagnostics.CodeAnalysis;
 namespace SkiServiceModels.BSON.DTOs.Request
 {
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class UpdateOrderRequest : UpdateRequest, IOrder
+    public class CreateOrderRequest : CreateRequest, IOrder
     {
         [JsonProperty("priority_id")]
-        public string? PriorityId { get; set; } = null;
+        public required string PriorityId { get; set; }
 
         [JsonProperty("service_id")]
-        public string? ServiceId { get; set; } = null;
+        public required string ServiceId { get; set; }
 
         [JsonProperty("state_id")]
-        public string? StateId { get; set; } = null;
+        public required string StateId { get; set; }
 
         [JsonProperty("user_id")]
-        public string? UserId { get; set; } = null;
+        public string? UserId { get; set; }
 
         ObjectId IOrder.PriorityId { 
             get => ObjectId.Parse(PriorityId);
@@ -39,20 +39,17 @@ namespace SkiServiceModels.BSON.DTOs.Request
             set => UserId = value?.ToString();
         }
 
-        [AllowNull]
         [JsonProperty("email")]
-        public string Email { get; set; } = null;
+        public required string Email { get; set; }
 
-        [AllowNull]
         [JsonProperty("name")]
-        public string Name { get; set; } = null;
+        public required string Name { get; set; }
 
         [JsonProperty("note")]
-        public string? Note { get; set; } = null;
+        public string? Note { get; set; }
 
-        [AllowNull]
         [JsonProperty("phone")]
-        public string Phone { get; set; } = null;
+        public required string Phone { get; set; }
 
         // Hidden properties since they are not allowed to be updated
 

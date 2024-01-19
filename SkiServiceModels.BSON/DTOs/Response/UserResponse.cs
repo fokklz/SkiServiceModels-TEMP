@@ -9,16 +9,15 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace SkiServiceModels.BSON.DTOs.Response
 {
+    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class UserResponse : ModelResponse, IUser, IResponseDTO
     {
         [AllowNull, NotNull]
         public string Username { get; set; }
+        public bool? Locked { get; set; }
+        public string? Role { get; set; }
 
         // Specially implemented properties to allow for null values and parsing
-
-        [AdminOnly]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Locked { get; set; } = null;
 
         bool IUserBase.Locked
         {
@@ -26,9 +25,6 @@ namespace SkiServiceModels.BSON.DTOs.Response
             set => Locked = value;
         }
 
-        [OwnerOrAdminOnly]
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Role { get; set; }
         RoleNames IUserBase.Role
         {
             get => Role == null ? RoleNames.User : (RoleNames)Enum.Parse(typeof(RoleNames), Role);

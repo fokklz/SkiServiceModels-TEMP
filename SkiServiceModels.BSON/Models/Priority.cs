@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization.Attributes;
 using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.BSON.Models.Base;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SkiServiceModels.BSON.Models
 {
@@ -11,6 +12,7 @@ namespace SkiServiceModels.BSON.Models
         public int Days { get; set; }
 
         [BsonElement("name")]
+        [AllowNull, NotNull]
         public string Name { get; set; }
     }
 }

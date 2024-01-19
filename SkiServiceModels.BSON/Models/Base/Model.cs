@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using SkiServiceModels.Attributes;
 using SkiServiceModels.BSON.Interfaces;
 
 namespace SkiServiceModels.BSON.Models.Base
@@ -10,6 +11,7 @@ namespace SkiServiceModels.BSON.Models.Base
         public ObjectId Id { get; set; }
 
         [BsonElement("is_deleted")]
+        [AdminOnly]
         public bool IsDeleted { get; set; } = false;
     }
 }

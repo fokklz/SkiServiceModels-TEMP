@@ -8,26 +8,13 @@ using System.Diagnostics.CodeAnalysis;
 namespace SkiServiceModels.BSON.DTOs.Request
 {
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class UpdateUserRequest : UpdateRequest, IUser
+    public class CreateUserRequest : CreateRequest, IUser
     {
-        public RoleNames? Role { get; set; } = null;
+        [JsonProperty("role")]
+        public RoleNames Role { get; set; }
 
-        [AllowNull]
-        public string Username { get; set; } = null;
-
-        public bool? Locked { get; set; } = null;
-
-        // Implemented properties but with allowed null values
-
-        bool IUserBase.Locked {
-            get => Locked ?? false; 
-            set => Locked = value; 
-        }
-
-        RoleNames IUserBase.Role { 
-            get => Role ?? RoleNames.User;
-            set => Role = value;
-        }
+        [JsonProperty("username")]
+        public required string Username { get; set; } 
 
         // Hidden properties since they are not allowed to be updated
 
@@ -37,5 +24,6 @@ namespace SkiServiceModels.BSON.DTOs.Request
         byte[] IUserBase.PasswordHash { get; set; }
         [AllowNull]
         byte[] IUserBase.PasswordSalt { get; set; }
+        bool IUserBase.Locked { get; set; }
     }
 }

@@ -15,28 +15,34 @@ namespace SkiServiceModels.BSON.AutoMapper
         {
             // CreateMap<Source, Destination>();
 
-            CreateMap<UpdateOrderRequest, Order>();
-            CreateMap<UpdatePriorityRequest, Priority>();
-            CreateMap<UpdateStateRequest, State>();
-            CreateMap<UpdateServiceRequest, Service>();
-            CreateMap<UpdateUserRequest, User>();
+            CreateAdminMap<UpdateOrderRequest, Order>();
+            CreateAdminMap<UpdatePriorityRequest, Priority>();
+            CreateAdminMap<UpdateStateRequest, State>();
+            CreateAdminMap<UpdateServiceRequest, Service>();
+            CreateAdminMap<UpdateUserRequest, User>();
 
-            SetupResponseMap<User, UserResponse>();
-            SetupResponseMap<Order, OrderResponse>();
-            SetupResponseMap<Priority, PriorityResponse>(); 
-            SetupResponseMap<State, StateResponse>();
-            SetupResponseMap<Service, ServiceResponse>();
+            CreateAdminMap<CreateOrderRequest, Order>();
+            CreateAdminMap<CreatePriorityRequest, Priority>();
+            CreateAdminMap<CreateStateRequest, State>();
+            CreateAdminMap<CreateServiceRequest, Service>();
+            CreateAdminMap<CreateUserRequest, User>();
+
+            CreateAdminMap<User, UserResponse>(true);
+            CreateAdminMap<Order, OrderResponse>(true);
+            CreateAdminMap<Priority, PriorityResponse>(true);
+            CreateAdminMap<State, StateResponse>(true);
+            CreateAdminMap<Service, ServiceResponse>(true);
         }
 
-        public void SetupResponseMap<TSrc, TDest>()
+        public void CreateAdminMap<TSrc, TDest>(bool source = false)
         {
             CreateMap<TSrc, TDest>().ForAllMembers(opts => opts.Condition((src, dest, srcMember, destMember, context) =>
             {
-                var destinationType = dest?.GetType();
-                var sourceProperty = destinationType?.GetProperty(opts.DestinationMember.Name);
+                var targetType = source ? src?.GetType() : dest?.GetType();
+                var targetProperty = targetType?.GetProperty(opts.DestinationMember.Name);
 
-                var adminOnly = sourceProperty?.GetCustomAttribute<AdminOnlyAttribute>() != null;
-                var ownerOrAdminOnly = sourceProperty?.GetCustomAttribute<OwnerOrAdminOnlyAttribute>() != null;
+                var adminOnly = targetProperty?.GetCustomAttribute<AdminOnlyAttribute>() != null;
+                var ownerOrAdminOnly = targetProperty?.GetCustomAttribute<OwnerOrAdminOnlyAttribute>() != null;
 
                 if (context.TryGetItems(out var items))
                 {

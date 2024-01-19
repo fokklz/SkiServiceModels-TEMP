@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiServiceModels.EF", "SkiS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{191CB7FD-991E-40DD-98A7-51FDB1EDC7BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiServiceModels.Tests", "SkiServiceModels.Tests\SkiServiceModels.Tests.csproj", "{262761B5-8B23-46F7-8C7A-DC551364322C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiServiceModels.BSON.Tests", "SkiServiceModels.BSON.Tests\SkiServiceModels.BSON.Tests.csproj", "{12AEA994-CC28-43AF-AC82-32D5D0261E6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{191CB7FD-991E-40DD-98A7-51FDB1EDC7BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{191CB7FD-991E-40DD-98A7-51FDB1EDC7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{191CB7FD-991E-40DD-98A7-51FDB1EDC7BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{262761B5-8B23-46F7-8C7A-DC551364322C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{262761B5-8B23-46F7-8C7A-DC551364322C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{262761B5-8B23-46F7-8C7A-DC551364322C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{262761B5-8B23-46F7-8C7A-DC551364322C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12AEA994-CC28-43AF-AC82-32D5D0261E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12AEA994-CC28-43AF-AC82-32D5D0261E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12AEA994-CC28-43AF-AC82-32D5D0261E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12AEA994-CC28-43AF-AC82-32D5D0261E6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
