@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson;
 using Newtonsoft.Json;
-using SkiServiceModels.BSON.DTOs.Request;
+using SkiServiceModels.BSON.DTOs.Requests;
 using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.BSON.Models;
 

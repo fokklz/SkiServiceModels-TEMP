@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using SkiServiceModels.Attributes;
-using SkiServiceModels.BSON.Interfaces;
+using SkiServiceModels.BSON.Interfaces.Base;
 
 namespace SkiServiceModels.BSON.Models.Base
 {

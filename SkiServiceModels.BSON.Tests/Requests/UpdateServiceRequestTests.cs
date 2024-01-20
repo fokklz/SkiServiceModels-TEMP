@@ -1,6 +1,6 @@
 ﻿
 using MongoDB.Bson;
-using SkiServiceModels.BSON.DTOs.Request;
+using SkiServiceModels.BSON.DTOs.Requests;
 using SkiServiceModels.BSON.Models;
 
 namespace SkiServiceModels.BSON.Tests.Requests

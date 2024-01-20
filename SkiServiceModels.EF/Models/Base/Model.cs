@@ -1,4 +1,4 @@
-﻿using SkiServiceModels.EF.Interfaces;
+﻿using SkiServiceModels.EF.Interfaces.Base;
 using System.ComponentModel.DataAnnotations;
 
 namespace SkiServiceModels.EF.Models.Base

@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson;
-using SkiServiceModels.BSON.DTOs.Request.Base;
-using SkiServiceModels.BSON.Interfaces;
+using SkiServiceModels.BSON.DTOs.Requests.Base;
+using SkiServiceModels.BSON.Interfaces.Base;
 
 namespace SkiServiceModels.BSON.Tests.Requests.Base
 {
