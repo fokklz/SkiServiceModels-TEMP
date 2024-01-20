@@ -2,7 +2,7 @@
 using SkiServiceModels.EF.Interfaces.Base;
 using SkiServiceModels.Interfaces.Base;
 
-namespace SkiServiceModels.BSON.DTOs.Responses.Base
+namespace SkiServiceModels.EF.DTOs.Responses.Base
 {
     public abstract class ModelResponse : IModel
     {

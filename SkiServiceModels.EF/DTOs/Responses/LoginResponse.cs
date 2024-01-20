@@ -1,6 +1,6 @@
 ﻿using SkiServiceModels.DTOs;
 
-namespace SkiServiceModels.BSON.DTOs.Responses
+namespace SkiServiceModels.EF.DTOs.Responses
 {
     public class LoginResponse : UserResponse
     {
