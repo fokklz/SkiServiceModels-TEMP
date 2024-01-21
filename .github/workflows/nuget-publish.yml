@@ -1,0 +1,45 @@
+name: Publish NuGet Package
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Update README
+        run: pwsh generate.ps1
+        shell: pwsh
+        working-directory: ./
+        
+      - name: Set Version
+        run: |
+          TOTAL_COMMITS=$(git rev-list --count main)
+          MERGE_COMMITS=$(git log --oneline --merges main | wc -l)
+          echo "VERSION=2.$MERGE_COMMITS.$TOTAL_COMMITS" >> $GITHUB_ENV
+
+      - name: Build Core NuGet package
+        run: dotnet pack ./SkiServiceModels/SkiServiceModels.csproj --configuration Release -o nupkg /p:Version=$VERSION
+
+      - name: Build BSON NuGet package
+        run: dotnet pack ./SkiServiceModels.BSON/SkiServiceModels.BSON.csproj --configuration Release -o nupkg /p:Version=$VERSION
+
+      - name: Build EF NuGet package
+        run: dotnet pack ./SkiServiceModels.EF/SkiServiceModels.EF.csproj --configuration Release -o nupkg /p:Version=$VERSION
+
+      - name: Publish Core NuGet package
+        run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json

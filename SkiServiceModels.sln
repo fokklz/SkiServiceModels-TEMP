@@ -14,9 +14,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{FD92A1A8-D65E-4C11-82B3-8B92512A214B}"
 	ProjectSection(SolutionItems) = preProject
 		generate.ps1 = generate.ps1
+		.github\workflows\nuget-publish.yml = .github\workflows\nuget-publish.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiServiceModels.EF.Tests", "SkiServiceModels.EF.Tests\SkiServiceModels.EF.Tests.csproj", "{B121F10E-044D-45D7-969B-4037212B986E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiServiceModels.EF.Tests", "SkiServiceModels.EF.Tests\SkiServiceModels.EF.Tests.csproj", "{B121F10E-044D-45D7-969B-4037212B986E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,16 @@
+﻿<package>
+	<metadata>
+		<id>SkiServiceModels.BSON</id>
+		<version>2.0.0</version>
+		<authors>Fokko Vos</authors>
+		<owners>Fokko Vos</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Models for SkiService BSON</description>
+		<releaseNotes>First release</releaseNotes>
+		<tags>ski-service</tags>
+	</metadata>
+
+	<files>
+		<file src="README.md" target=""/>
+	</files>
+</package>
