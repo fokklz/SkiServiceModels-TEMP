@@ -25,12 +25,13 @@ jobs:
         run: pwsh generate.ps1
         shell: pwsh
         working-directory: ./
-        
+
       - name: Set Version
         run: |
-          TOTAL_COMMITS=$(git rev-list --count main)
           MERGE_COMMITS=$(git log --oneline --merges main | wc -l)
-          echo "VERSION=2.$MERGE_COMMITS.$TOTAL_COMMITS" >> $GITHUB_ENV
+          LAST_MERGE_COMMIT=$(git rev-list --merges -n 1 HEAD)
+          COMMITS_SINCE_LAST_MERGE=$(git rev-list --count HEAD ^$LAST_MERGE_COMMIT)
+          echo "VERSION=2.$MERGE_COMMITS.$COMMITS_SINCE_LAST_MERGE" >> $GITHUB_ENV
 
       - name: Build Core NuGet package
         run: dotnet pack ./SkiServiceModels/SkiServiceModels.csproj --configuration Release -o nupkg /p:Version=$VERSION
