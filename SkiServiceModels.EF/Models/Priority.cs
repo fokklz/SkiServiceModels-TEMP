@@ -9,6 +9,6 @@ namespace SkiServiceModels.EF.Models
         public int Days { get; set; }
 
         [StringLength(20)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
     }
 }

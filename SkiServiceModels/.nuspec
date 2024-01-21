@@ -8,6 +8,7 @@
         <description>Models for SkiService</description>
         <releaseNotes>First release</releaseNotes>
         <tags>ski-service</tags>
+		<license type="expression">Apache-2.0</license>
     </metadata>
 
     <files>
