@@ -17,12 +17,10 @@ namespace SkiServiceModels.BSON.Models
 
         [BsonElement("password_hash")]
         [AllowNull, NotNull]
-        [AdminOnly]
         public byte[] PasswordHash { get; set; }
 
         [BsonElement("password_salt")]
         [AllowNull, NotNull]
-        [AdminOnly]
         public byte[] PasswordSalt { get; set; }
 
         [BsonElement("locked")]

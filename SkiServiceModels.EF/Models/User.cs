@@ -1,4 +1,5 @@
-﻿using SkiServiceModels.EF.Interfaces;
+﻿using SkiServiceModels.Attributes;
+using SkiServiceModels.EF.Interfaces;
 using SkiServiceModels.EF.Models.Base;
 using SkiServiceModels.Enums;
 using System.ComponentModel.DataAnnotations;
@@ -18,7 +19,9 @@ namespace SkiServiceModels.EF.Models
         [AllowNull, NotNull]
         public byte[] PasswordSalt { get; set; }
         public string? RefreshToken { get; set; } = null;
+        [OwnerOrAdminOnly]
         public RoleNames Role { get; set; } = RoleNames.User;
+        [AdminOnly]
         public bool Locked { get; set; } = false;
     }
 }

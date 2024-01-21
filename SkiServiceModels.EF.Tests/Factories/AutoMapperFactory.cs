@@ -1,6 +1,6 @@
-﻿using SkiServiceModels.BSON.AutoMapper;
+﻿using SkiServiceModels.EF.AutoMapper;
 
-namespace SkiServiceModels.BSON.Tests.Factories
+namespace SkiServiceModels.EF.Tests.Factories
 {
     public static class AutoMapperFactory
     {

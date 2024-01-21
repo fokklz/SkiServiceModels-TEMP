@@ -1,0 +1,24 @@
+﻿using SkiServiceModels.EF.DTOs.Requests.Base;
+using SkiServiceModels.EF.Interfaces.Base;
+
+namespace SkiServiceModels.EF.Tests.Requests.Base
+{
+    public class UpdateRequestTests
+    {
+        [Fact]
+        public void ParseAlwaysIgnoresIdAndIncludesIsDeleted()
+        {
+            var rawJson = @"
+            {
+                ""id"": 1,
+                ""is_deleted"": true,
+                ""name"": ""Test""
+            }";
+
+            var parsed = JsonConvert.DeserializeObject<UpdateRequest>(rawJson);
+
+            Assert.NotEqual(1, (parsed as IModel)?.Id);
+            Assert.True((parsed as IModel)?.IsDeleted);
+        }
+    }
+}

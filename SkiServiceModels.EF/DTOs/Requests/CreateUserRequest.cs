@@ -11,7 +11,7 @@ namespace SkiServiceModels.EF.DTOs.Requests
     public class CreateUserRequest : CreateRequest, IUser
     {
         [JsonProperty("role")]
-        public RoleNames Role { get; set; }
+        public RoleNames Role { get; set; } = RoleNames.User;
 
         [JsonProperty("username")]
         public required string Username { get; set; }

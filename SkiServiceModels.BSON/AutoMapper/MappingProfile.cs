@@ -2,9 +2,7 @@
 using SkiServiceModels.Attributes;
 using SkiServiceModels.BSON.DTOs.Requests;
 using SkiServiceModels.BSON.DTOs.Responses;
-using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.BSON.Models;
-using SkiServiceModels.Interfaces;
 using System.Reflection;
 
 namespace SkiServiceModels.BSON.AutoMapper
