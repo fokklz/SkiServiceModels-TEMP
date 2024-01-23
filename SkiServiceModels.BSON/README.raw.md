@@ -162,7 +162,7 @@ dotnet add package SkiServiceModels.BSON
 <<MODEL::User>>
 
 ### Refresh Result
-<<MODEL::REFRESHRESULT>>
+<<MODEL::RefreshResult>>
 
 ### Base
 

@@ -162,7 +162,7 @@ dotnet add package SkiServiceModels.EF
 <<MODEL::User>>
 
 ### Refresh Result
-<<MODEL::REFRESHRESULT>>
+<<MODEL::RefreshResult>>
 
 ### Base
 
