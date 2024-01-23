@@ -3,6 +3,8 @@ using SkiServiceModels.Attributes;
 using SkiServiceModels.BSON.DTOs.Requests;
 using SkiServiceModels.BSON.DTOs.Responses;
 using SkiServiceModels.BSON.Models;
+using SkiServiceModels.Options;
+using System.Diagnostics;
 using System.Reflection;
 
 namespace SkiServiceModels.BSON.AutoMapper
@@ -36,31 +38,29 @@ namespace SkiServiceModels.BSON.AutoMapper
         {
             CreateMap<TSrc, TDest>().ForAllMembers(opts => opts.Condition((src, dest, srcMember, destMember, context) =>
             {
+                DTOParseOptions dtoOptions;
+
                 var targetType = source ? src?.GetType() : dest?.GetType();
                 var targetProperty = targetType?.GetProperty(opts.DestinationMember.Name);
 
-                var adminOnly = targetProperty?.GetCustomAttribute<AdminOnlyAttribute>() != null;
-                var ownerOrAdminOnly = targetProperty?.GetCustomAttribute<OwnerOrAdminOnlyAttribute>() != null;
-
+                // parse automapper context options to our internal options class
                 if (context.TryGetItems(out var items))
                 {
                     var isOwner = (bool)items.GetValueOrDefault("IsOwner", false);
                     var isAdmin = (bool)items.GetValueOrDefault("IsAdmin", false);
 
-                    if (ownerOrAdminOnly)
+                    dtoOptions = new DTOParseOptions
                     {
-                        return isOwner || isAdmin;
-                    }
-                    if (adminOnly)
-                    {
-                        return isAdmin;
-                    }
+                        IsAdmin = isAdmin,
+                        IsOwner = isOwner
+                    };
+                }
+                else
+                {
+                    dtoOptions = new DTOParseOptions();
                 }
 
-                if (adminOnly || ownerOrAdminOnly)
-                    return false;
-
-                return true;
+                return ModelUtils.IsAllowed(targetProperty, dtoOptions);
             }));
         }
     }

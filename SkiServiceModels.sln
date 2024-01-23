@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Pr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiServiceModels.EF.Tests", "SkiServiceModels.EF.Tests\SkiServiceModels.EF.Tests.csproj", "{B121F10E-044D-45D7-969B-4037212B986E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiServiceModels.BSON.Extensions", "SkiServiceModels.BSON.Extensions\SkiServiceModels.BSON.Extensions.csproj", "{5AB8FA83-A3D8-4E88-82CF-5EAA19574180}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiServiceModels.BSON.AutoMapper", "SkiServiceModels.BSON.AutoMapper\SkiServiceModels.BSON.AutoMapper.csproj", "{DE51054C-6112-45B4-B252-28187A6E2F58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{B121F10E-044D-45D7-969B-4037212B986E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B121F10E-044D-45D7-969B-4037212B986E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B121F10E-044D-45D7-969B-4037212B986E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB8FA83-A3D8-4E88-82CF-5EAA19574180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB8FA83-A3D8-4E88-82CF-5EAA19574180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB8FA83-A3D8-4E88-82CF-5EAA19574180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB8FA83-A3D8-4E88-82CF-5EAA19574180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE51054C-6112-45B4-B252-28187A6E2F58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE51054C-6112-45B4-B252-28187A6E2F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE51054C-6112-45B4-B252-28187A6E2F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE51054C-6112-45B4-B252-28187A6E2F58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,6 +2,7 @@
 using SkiServiceModels.Attributes;
 using SkiServiceModels.BSON.DTOs.Responses.Base;
 using SkiServiceModels.BSON.Interfaces;
+using SkiServiceModels.BSON.Models;
 using SkiServiceModels.Enums;
 using SkiServiceModels.Interfaces;
 using SkiServiceModels.Interfaces.Models;
@@ -10,6 +11,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace SkiServiceModels.BSON.DTOs.Responses
 {
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+    [ModelType(typeof(User))]
     public class UserResponse : ModelResponse, IUser, IResponseDTO
     {
         [AllowNull, NotNull]

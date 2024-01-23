@@ -11,6 +11,9 @@ dotnet add package SkiServiceModels.EF
 ## Contents
 
 <!--TOC-->
+- [SkiServiceModels.EF](#skiservicemodelsef)
+  - [Installation](#installation)
+  - [Contents](#contents)
   - [DTOs/Requests](#dtosrequests)
     - [CreateOrderRequest](#createorderrequest)
     - [CreatePriorityRequest](#createpriorityrequest)
@@ -32,7 +35,7 @@ dotnet add package SkiServiceModels.EF
     - [ServiceResponse](#serviceresponse)
     - [StateResponse](#stateresponse)
     - [UserResponse](#userresponse)
-    - [Base](#base)
+    - [Base](#base-1)
       - [ModelResponse](#modelresponse)
   - [Interfaces](#interfaces)
     - [IOrder](#iorder)
@@ -40,7 +43,7 @@ dotnet add package SkiServiceModels.EF
     - [IService](#iservice)
     - [IState](#istate)
     - [IUser](#iuser)
-    - [Base](#base)
+    - [Base](#base-2)
       - [IModel](#imodel)
   - [Models](#models)
     - [Order](#order)
@@ -48,7 +51,8 @@ dotnet add package SkiServiceModels.EF
     - [Service](#service)
     - [State](#state)
     - [User](#user)
-    - [Base](#base)
+    - [Refresh Result](#refresh-result)
+    - [Base](#base-3)
       - [Model](#model)
 <!--/TOC-->
 
@@ -156,6 +160,9 @@ dotnet add package SkiServiceModels.EF
 
 ### User
 <<MODEL::User>>
+
+### Refresh Result
+<<MODEL::REFRESHRESULT>>
 
 ### Base
 

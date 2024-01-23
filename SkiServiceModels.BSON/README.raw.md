@@ -11,6 +11,9 @@ dotnet add package SkiServiceModels.BSON
 ## Contents
 
 <!--TOC-->
+- [SkiServiceModels.BSON](#skiservicemodelsbson)
+  - [Installation](#installation)
+  - [Contents](#contents)
   - [DTOs/Requests](#dtosrequests)
     - [CreateOrderRequest](#createorderrequest)
     - [CreatePriorityRequest](#createpriorityrequest)
@@ -32,7 +35,7 @@ dotnet add package SkiServiceModels.BSON
     - [ServiceResponse](#serviceresponse)
     - [StateResponse](#stateresponse)
     - [UserResponse](#userresponse)
-    - [Base](#base)
+    - [Base](#base-1)
       - [ModelResponse](#modelresponse)
   - [Interfaces](#interfaces)
     - [IOrder](#iorder)
@@ -40,7 +43,7 @@ dotnet add package SkiServiceModels.BSON
     - [IService](#iservice)
     - [IState](#istate)
     - [IUser](#iuser)
-    - [Base](#base)
+    - [Base](#base-2)
       - [IModel](#imodel)
   - [Models](#models)
     - [Order](#order)
@@ -48,7 +51,8 @@ dotnet add package SkiServiceModels.BSON
     - [Service](#service)
     - [State](#state)
     - [User](#user)
-    - [Base](#base)
+    - [Refresh Result](#refresh-result)
+    - [Base](#base-3)
       - [Model](#model)
 <!--/TOC-->
 
@@ -156,6 +160,9 @@ dotnet add package SkiServiceModels.BSON
 
 ### User
 <<MODEL::User>>
+
+### Refresh Result
+<<MODEL::REFRESHRESULT>>
 
 ### Base
 

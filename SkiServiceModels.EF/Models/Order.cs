@@ -39,9 +39,20 @@ namespace SkiServiceModels.EF.Models
         [StringLength(1000)]
         public string? Note { get; set; }
 
-        IUser? IOrder.User { get => User; set => User = value as User; }
-        IService IOrder.Service { get => Service; set => Service = (value as Service)!; }
-        IPriority IOrder.Priority { get => Priority; set => Priority = (value as Priority)!; }
-        IState IOrder.State { get => State; set => State = (value as State)!; }
+        IUser? IOrder.User { 
+            get => User; 
+            set => User = value as User; }
+        IService IOrder.Service { 
+            get => Service; 
+            set => Service = (value as Service)!;
+        }
+        IPriority IOrder.Priority { 
+            get => Priority; 
+            set => Priority = (value as Priority)!; 
+        }
+        IState IOrder.State { 
+            get => State; 
+            set => State = (value as State)!; 
+        }
     }
 }
