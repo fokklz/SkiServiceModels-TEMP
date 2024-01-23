@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using SkiServiceModels.EF.Interfaces.Base;
 using SkiServiceModels.Interfaces;
-using SkiServiceModels.Interfaces.Base;
 
 namespace SkiServiceModels.EF.DTOs.Requests.Base
 {

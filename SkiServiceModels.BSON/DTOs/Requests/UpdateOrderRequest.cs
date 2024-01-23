@@ -1,13 +1,15 @@
 ﻿using MongoDB.Bson;
 using Newtonsoft.Json;
+using SkiServiceModels.Attributes;
 using SkiServiceModels.BSON.DTOs.Requests.Base;
 using SkiServiceModels.BSON.Interfaces;
+using SkiServiceModels.BSON.Models;
 using SkiServiceModels.Interfaces.Models;
 using System.Diagnostics.CodeAnalysis;
 
 namespace SkiServiceModels.BSON.DTOs.Requests
 {
-    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore), ModelType(typeof(Order))]
     public class UpdateOrderRequest : UpdateRequest, IOrder
     {
         [JsonProperty("priority_id")]

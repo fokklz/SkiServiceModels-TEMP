@@ -11,6 +11,8 @@ This project contains everything not related to a specific database implementati
 ## Contents
 
 <!--TOC-->
+  - [Common](#common)
+    - [RefreshRequestBase](#refreshrequestbase)
   - [DTOs](#dtos)
     - [ErrorData](#errordata)
     - [TokenData](#tokendata)
@@ -26,8 +28,7 @@ This project contains everything not related to a specific database implementati
     - [IRequestDTO](#irequestdto)
     - [IRequestDTO](#irequestdto)
     - [IUpdateDTO](#iupdatedto)
-    - [Base](#base)
-      - [IModelBase](#imodelbase)
+    - [IModelBase](#imodelbase)
     - [Models](#models)
       - [IOrderBase](#iorderbase)
       - [IPriorityBase](#iprioritybase)
@@ -35,6 +36,11 @@ This project contains everything not related to a specific database implementati
       - [IStateBase](#istatebase)
       - [IUserBase](#iuserbase)
 <!--/TOC-->
+
+## Common
+
+### RefreshRequestBase
+<<COMMON::RefreshRequestBase>>
 
 ## DTOs
 
@@ -77,10 +83,8 @@ This project contains everything not related to a specific database implementati
 ### IUpdateDTO
 <<INTERFACE::IUpdateDTO>>
 
-### Base
-
-#### IModelBase
-<<INTERFACEBASE::IModelBase>>
+### IModelBase
+<<INTERFACE::IModelBase>>
 
 ### Models
 

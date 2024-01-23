@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using SkiServiceModels.Attributes;
 using SkiServiceModels.BSON.Interfaces.Base;
-using SkiServiceModels.Interfaces.Base;
+using SkiServiceModels.Interfaces;
 
 namespace SkiServiceModels.BSON.DTOs.Responses.Base
 {

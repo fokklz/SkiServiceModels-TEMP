@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using SkiServiceModels.Attributes;
+using SkiServiceModels.BSON.DTOs.Requests;
 using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.BSON.Models.Base;
 using SkiServiceModels.Enums;
@@ -8,6 +9,8 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace SkiServiceModels.BSON.Models
 {
+    [CreateType(typeof(CreateUserRequest))]
+    [UpdateType(typeof(UpdateUserRequest))]
     public class User : Model, IUser
     {
 

@@ -52,6 +52,10 @@ dotnet add package SkiServiceModels.BSON
       - [Model](#model)
 <!--/TOC-->
 
+## Common
+
+### RefreshRequestBase
+<<COMMON::RefreshRequestBase>>
 
 ## DTOs/Requests
 

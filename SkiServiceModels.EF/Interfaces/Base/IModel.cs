@@ -1,4 +1,4 @@
-﻿using SkiServiceModels.Interfaces.Base;
+﻿using SkiServiceModels.Interfaces;
 
 namespace SkiServiceModels.EF.Interfaces.Base
 {

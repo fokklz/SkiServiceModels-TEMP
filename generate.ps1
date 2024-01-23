@@ -13,6 +13,7 @@ $workingDirectory = Get-Location
 $directories = Get-ChildItem -Directory -Path $workingDirectory
 
 $directoriesInfo = @{
+    "COMMON" = "Common"
     "MODEL" = "Models"
     "MODELBASE" = "Models\Base"
     "DTO" = "DTOs"

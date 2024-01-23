@@ -1,5 +1,4 @@
 ﻿using SkiServiceModels.Enums;
-using SkiServiceModels.Interfaces.Base;
 
 namespace SkiServiceModels.Interfaces.Models
 {

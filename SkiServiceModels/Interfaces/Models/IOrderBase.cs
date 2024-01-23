@@ -1,6 +1,4 @@
-﻿using SkiServiceModels.Interfaces.Base;
-
-namespace SkiServiceModels.Interfaces.Models
+﻿namespace SkiServiceModels.Interfaces.Models
 {
     public interface IOrderBase : IModelBase
     {

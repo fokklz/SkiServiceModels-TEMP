@@ -1,4 +1,4 @@
-﻿namespace SkiServiceModels.Interfaces.Base
+﻿namespace SkiServiceModels.Interfaces
 {
     public interface IModelBase
     {

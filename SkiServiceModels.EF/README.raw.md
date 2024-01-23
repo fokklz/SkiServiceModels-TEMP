@@ -52,6 +52,10 @@ dotnet add package SkiServiceModels.EF
       - [Model](#model)
 <!--/TOC-->
 
+## Common
+
+### RefreshRequestBase
+<<COMMON::RefreshRequestBase>>
 
 ## DTOs/Requests
 

@@ -1,5 +1,5 @@
 ﻿using MongoDB.Bson;
-using SkiServiceModels.Interfaces.Base;
+using SkiServiceModels.Interfaces;
 
 namespace SkiServiceModels.BSON.Interfaces.Base
 {

@@ -1,6 +1,6 @@
 ﻿using SkiServiceModels.Attributes;
 using SkiServiceModels.EF.Interfaces.Base;
-using SkiServiceModels.Interfaces.Base;
+using SkiServiceModels.Interfaces;
 
 namespace SkiServiceModels.EF.DTOs.Responses.Base
 {
