@@ -39,6 +39,12 @@ jobs:
       - name: Build BSON NuGet package
         run: dotnet pack ./SkiServiceModels.BSON/SkiServiceModels.BSON.csproj --configuration Release -o nupkg /p:Version=$VERSION
 
+      - name: Build BSON AutoMapper NuGet package
+        run: dotnet pack ./SkiServiceModels.BSON.AutoMapper/SkiServiceModels.BSON.AutoMapper.csproj --configuration Release -o nupkg /p:Version=$VERSION
+
+      - name: Build BSON Extensions NuGet package
+        run: dotnet pack ./SkiServiceModels.BSON.Extensions/SkiServiceModels.BSON.Extensions.csproj --configuration Release -o nupkg /p:Version=$VERSION
+
       - name: Build EF NuGet package
         run: dotnet pack ./SkiServiceModels.EF/SkiServiceModels.EF.csproj --configuration Release -o nupkg /p:Version=$VERSION
 
