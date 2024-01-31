@@ -1,8 +1,8 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using SkiServiceModels.Attributes;
 using SkiServiceModels.BSON.DTOs.Requests.Base;
+using SkiServiceModels.BSON.Interfaces.Base;
 using SkiServiceModels.Options;
 using System.Reflection;
 
@@ -10,12 +10,13 @@ namespace SkiServiceModels.BSON.Extensions
 {
     public static class UpdateDTOExtension
     {
-        public static UpdateDefinition<BsonDocument>? Parse<TUpdate>(this TUpdate update, DTOParseOptions options = null)
+        public static UpdateDefinition<TModel>? Parse<TUpdate, TModel>(this TUpdate update, DTOParseOptions options = null)
             where TUpdate : UpdateRequest
+            where TModel : class, IModel
         {
             options ??= new DTOParseOptions();
 
-            var updateDefs = new List<UpdateDefinition<BsonDocument>>();
+            var updateDefs = new List<UpdateDefinition<TModel>>();
             var props = update.GetType().GetProperties();
 
             if (props == null) return null;
@@ -32,11 +33,11 @@ namespace SkiServiceModels.BSON.Extensions
                     var bsonElementAttr = counterPart?.GetCustomAttribute<BsonElementAttribute>();
                     var fieldName = bsonElementAttr?.ElementName ?? prop.Name;
 
-                    updateDefs.Add(Builders<BsonDocument>.Update.Set(fieldName, propValue));
+                    updateDefs.Add(Builders<TModel>.Update.Set(fieldName, propValue));
                 }
             }
 
-            return Builders<BsonDocument>.Update.Combine(updateDefs);
+            return Builders<TModel>.Update.Combine(updateDefs);
         }
     }
 }
