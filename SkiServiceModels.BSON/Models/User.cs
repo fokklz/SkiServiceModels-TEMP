@@ -16,10 +16,12 @@ namespace SkiServiceModels.BSON.Models
         public string Username { get; set; }
 
         [BsonElement("password_hash")]
+        [BsonRepresentation(BsonType.Binary)]
         [AllowNull, NotNull]
         public byte[] PasswordHash { get; set; }
 
         [BsonElement("password_salt")]
+        [BsonRepresentation(BsonType.Binary)]
         [AllowNull, NotNull]
         public byte[] PasswordSalt { get; set; }
 
