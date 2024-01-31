@@ -13,12 +13,18 @@ namespace SkiServiceModels.BSON.DTOs.Requests
     [ModelType(typeof(User))]
     public class UpdateUserRequest : UpdateRequest, IUser
     {
+        [JsonProperty("role")]
         public RoleNames? Role { get; set; } = null;
 
         [AllowNull]
+        [JsonProperty("username")]
         public string Username { get; set; } = null;
 
+        [JsonProperty("locked")]
         public bool? Locked { get; set; } = null;
+
+        [JsonProperty("password")]
+        public required string Password { get; set; }
 
         // Implemented properties but with allowed null values
 

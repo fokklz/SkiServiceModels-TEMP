@@ -19,6 +19,9 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         [JsonProperty("username")]
         public required string Username { get; set; }
 
+        [JsonProperty("password")]
+        public required string Password { get; set; }
+
         // Hidden properties since they are not allowed to be updated
 
         int IUserBase.LoginAttempts { get; set; }

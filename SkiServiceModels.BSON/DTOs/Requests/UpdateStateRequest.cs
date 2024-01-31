@@ -12,6 +12,7 @@ namespace SkiServiceModels.BSON.DTOs.Requests
     public class UpdateStateRequest : UpdateRequest, IState
     {
         [AllowNull]
+        [JsonProperty("name")]
         public string Name { get; set; } = null;
     }
 }
