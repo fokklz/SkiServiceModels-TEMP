@@ -17,7 +17,7 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         public int Days { get; set; }
 
         [JsonProperty("name")]
-        [RegularExpression("^[A-Za-z0-9 ]+$", ErrorMessage = "Name must only contain letters, numbers, and spaces.")]
+        [MinLength(3, ErrorMessage = "Name must be at least 3 characters long.")]
         public required string Name { get; set; }
 
         int? IPriorityBase.Days
