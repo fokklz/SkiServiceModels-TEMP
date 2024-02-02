@@ -5,6 +5,7 @@ using SkiServiceModels.BSON.DTOs.Requests.Base;
 using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.BSON.Models;
 using SkiServiceModels.Interfaces.Models;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
 namespace SkiServiceModels.BSON.DTOs.Requests
@@ -47,7 +48,9 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         }
 
         [JsonProperty("email")]
-        public string? Email { get; set; } = null;
+        [EmailAddress(ErrorMessage = "Invalid email format")]
+        public string? Email { get; set; }
+
 
         [JsonProperty("name")]
         public string? Name { get; set; } = null;
@@ -56,7 +59,8 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         public string? Note { get; set; } = null;
 
         [JsonProperty("phone")]
-        public string? Phone { get; set; } = null;
+        [RegularExpression(@"^\+?[1-9]\d{1,14}$", ErrorMessage = "Invalid phone number format")]
+        public string? Phone { get; set; }
 
         // Implemented properties but with allowed null values
 

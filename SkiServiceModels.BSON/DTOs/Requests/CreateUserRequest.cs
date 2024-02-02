@@ -5,6 +5,7 @@ using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.BSON.Models;
 using SkiServiceModels.Enums;
 using SkiServiceModels.Interfaces.Models;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
 namespace SkiServiceModels.BSON.DTOs.Requests
@@ -17,6 +18,7 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         public RoleNames Role { get; set; }
 
         [JsonProperty("username")]
+        [RegularExpression("^[a-zA-Z0-9._-]{3,}$", ErrorMessage = "Invalid username format.")]
         public required string Username { get; set; }
 
         [JsonProperty("password")]

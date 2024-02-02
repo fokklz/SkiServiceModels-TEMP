@@ -5,6 +5,7 @@ using SkiServiceModels.BSON.DTOs.Requests.Base;
 using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.BSON.Models;
 using SkiServiceModels.Interfaces.Models;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
 namespace SkiServiceModels.BSON.DTOs.Requests
@@ -47,6 +48,7 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         }
 
         [JsonProperty("email")]
+        [EmailAddress(ErrorMessage = "Invalid email format")]
         public required string Email { get; set; }
 
         [JsonProperty("name")]
@@ -56,6 +58,7 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         public string? Note { get; set; }
 
         [JsonProperty("phone")]
+        [RegularExpression(@"^\+?[1-9]\d{1,14}$", ErrorMessage = "Invalid phone number format")]
         public required string Phone { get; set; }
 
         // Hidden properties since they are not allowed to be updated
