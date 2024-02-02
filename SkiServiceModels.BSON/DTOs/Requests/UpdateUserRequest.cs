@@ -16,9 +16,8 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         [JsonProperty("role")]
         public RoleNames? Role { get; set; } = null;
 
-        [AllowNull]
         [JsonProperty("username")]
-        public string Username { get; set; } = null;
+        public string? Username { get; set; } = null;
 
         [JsonProperty("locked")]
         public bool? Locked { get; set; } = null;
@@ -27,6 +26,12 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         public string? Password { get; set; } = null;
 
         // Implemented properties but with allowed null values
+
+        string IUserBase.Username
+        {
+            get => Username ?? string.Empty;
+            set => Username = value;
+        }
 
         bool IUserBase.Locked
         {

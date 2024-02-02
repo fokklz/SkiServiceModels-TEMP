@@ -12,18 +12,28 @@ namespace SkiServiceModels.BSON.DTOs.Requests
     [ModelType(typeof(Service))]
     public class UpdateServiceRequest : UpdateRequest, IService
     {
-        [AllowNull]
         [JsonProperty("description")]
-        public string Description { get; set; } = null;
+        public string? Description { get; set; } = null;
 
-        [AllowNull]
         [JsonProperty("name")]
-        public string Name { get; set; } = null;
+        public string? Name { get; set; } = null;
 
         [JsonProperty("price")]
         public int? Price { get; set; } = null;
 
         // Implemented properties but with allowed null values
+
+        string IServiceBase.Description
+        {
+            get => Description ?? string.Empty;
+            set => Description = value;
+        }
+
+        string IServiceBase.Name
+        {
+            get => Name ?? string.Empty;
+            set => Name = value;
+        }
 
         int IServiceBase.Price
         {

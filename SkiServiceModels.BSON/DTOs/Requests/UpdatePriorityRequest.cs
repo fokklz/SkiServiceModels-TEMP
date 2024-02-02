@@ -15,11 +15,16 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         [JsonProperty("days")]
         public int? Days { get; set; } = null;
 
-        [AllowNull]
         [JsonProperty("name")]
-        public string Name { get; set; } = null;
+        public string? Name { get; set; } = null;
 
         // Implemented properties but with allowed null values
+
+        string IPriorityBase.Name
+        {
+            get => Name ?? string.Empty;
+            set => Name = value;
+        }
 
         int IPriorityBase.Days
         {

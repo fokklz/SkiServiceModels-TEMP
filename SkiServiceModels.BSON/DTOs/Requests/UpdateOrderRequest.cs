@@ -46,20 +46,37 @@ namespace SkiServiceModels.BSON.DTOs.Requests
             set => UserId = value?.ToString();
         }
 
-        [AllowNull]
         [JsonProperty("email")]
-        public string Email { get; set; } = null;
+        public string? Email { get; set; } = null;
 
-        [AllowNull]
         [JsonProperty("name")]
-        public string Name { get; set; } = null;
+        public string? Name { get; set; } = null;
 
         [JsonProperty("note")]
         public string? Note { get; set; } = null;
 
-        [AllowNull]
         [JsonProperty("phone")]
-        public string Phone { get; set; } = null;
+        public string? Phone { get; set; } = null;
+
+        // Implemented properties but with allowed null values
+
+        string IOrderBase.Email
+        {
+            get => Email ?? string.Empty;
+            set => Email = value;
+        }
+
+        string IOrderBase.Name
+        {
+            get => Name ?? string.Empty;
+            set => Name = value;
+        }
+
+        string IOrderBase.Phone
+        {
+            get => Phone ?? string.Empty;
+            set => Phone = value;
+        }
 
         // Hidden properties since they are not allowed to be updated
 
