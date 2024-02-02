@@ -21,6 +21,6 @@ namespace SkiServiceModels.BSON.DTOs.Responses
         public string Name { get; set; }
 
         [JsonProperty("price")]
-        public int Price { get; set; }
+        public int? Price { get; set; }
     }
 }

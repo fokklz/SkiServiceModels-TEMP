@@ -16,12 +16,5 @@ namespace SkiServiceModels.EF.DTOs.Requests
         [JsonProperty("name")]
         public string Name { get; set; } = null;
 
-        // Implemented properties but with allowed null values
-
-        int IPriorityBase.Days
-        {
-            get => Days ?? 0;
-            set => Days = value;
-        }
     }
 }

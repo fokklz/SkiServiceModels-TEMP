@@ -12,6 +12,6 @@ namespace SkiServiceModels.EF.Models
         [StringLength(50)]
         public required string Name { get; set; }
 
-        public int Price { get; set; }
+        public int? Price { get; set; }
     }
 }

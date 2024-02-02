@@ -17,6 +17,7 @@ namespace SkiServiceModels.BSON.Models
         public string Name { get; set; }
 
         [BsonElement("price")]
-        public int Price { get; set; }
+        [AllowNull, NotNull]
+        public int? Price { get; set; }
     }
 }

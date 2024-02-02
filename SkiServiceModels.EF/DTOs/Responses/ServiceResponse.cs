@@ -13,6 +13,7 @@ namespace SkiServiceModels.EF.DTOs.Responses
         public string Description { get; set; }
         [AllowNull, NotNull]
         public string Name { get; set; }
-        public int Price { get; set; }
+        [AllowNull, NotNull]
+        public int? Price { get; set; }
     }
 }

@@ -27,11 +27,5 @@ namespace SkiServiceModels.BSON.DTOs.Requests
             get => Name ?? string.Empty;
             set => Name = value;
         }
-
-        int IPriorityBase.Days
-        {
-            get => Days ?? 0;
-            set => Days = value;
-        }
     }
 }

@@ -20,12 +20,6 @@ namespace SkiServiceModels.EF.DTOs.Requests
         [JsonProperty("price")]
         public int? Price { get; set; } = null;
 
-        // Implemented properties but with allowed null values
 
-        int IServiceBase.Price
-        {
-            get => Price ?? 0;
-            set => Price = value;
-        }
     }
 }

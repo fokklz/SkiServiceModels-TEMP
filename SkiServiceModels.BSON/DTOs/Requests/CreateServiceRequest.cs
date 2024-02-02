@@ -3,6 +3,7 @@ using SkiServiceModels.Attributes;
 using SkiServiceModels.BSON.DTOs.Requests.Base;
 using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.BSON.Models;
+using SkiServiceModels.Interfaces.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace SkiServiceModels.BSON.DTOs.Requests
@@ -25,5 +26,11 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         [JsonProperty("price")]
         [Range(1, 1000, ErrorMessage = "The price must be between 1 and 1000.")]
         public int Price { get; set; }
+
+        int? IServiceBase.Price
+        {
+            get => Price;
+            set => Price = value ?? 0;
+        }
     }
 }
