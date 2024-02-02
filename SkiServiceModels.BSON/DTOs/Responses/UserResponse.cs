@@ -15,8 +15,13 @@ namespace SkiServiceModels.BSON.DTOs.Responses
     public class UserResponse : ModelResponse, IUser, IResponseDTO
     {
         [AllowNull, NotNull]
+        [JsonProperty("username")]
         public string Username { get; set; }
+
+        [JsonProperty("locked")]
         public bool? Locked { get; set; }
+
+        [JsonProperty("role")]
         public string? Role { get; set; }
 
         // Specially implemented properties to allow for null values and parsing

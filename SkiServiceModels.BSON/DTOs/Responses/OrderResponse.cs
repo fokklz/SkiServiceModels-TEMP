@@ -13,25 +13,37 @@ namespace SkiServiceModels.BSON.DTOs.Responses
     [ModelType(typeof(Order))]
     public class OrderResponse : ModelResponse, IOrder, IResponseDTO
     {
+        [JsonProperty("user")]
         public UserResponse? User { get; set; }
 
         [AllowNull, NotNull]
+        [JsonProperty("service")]
         public ServiceResponse Service { get; set; }
 
         [AllowNull, NotNull]
+        [JsonProperty("state")]
         public StateResponse State { get; set; }
 
         [AllowNull, NotNull]
+        [JsonProperty("priority")]
         public PriorityResponse Priority { get; set; }
 
+        [JsonProperty("created")]
         public DateTime Created { get; set; }
 
         [AllowNull, NotNull]
+        [JsonProperty("email")]
         public string Email { get; set; }
+
         [AllowNull, NotNull]
+        [JsonProperty("name")]
         public string Name { get; set; }
+
+        [JsonProperty("note")]
         public string? Note { get; set; }
+
         [AllowNull, NotNull]
+        [JsonProperty("phone")]
         public string Phone { get; set; }
 
         IState IOrder.State

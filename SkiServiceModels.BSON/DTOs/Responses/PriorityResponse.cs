@@ -13,7 +13,9 @@ namespace SkiServiceModels.BSON.DTOs.Responses
     public class PriorityResponse : ModelResponse, IPriority, IResponseDTO
     {
         [AllowNull, NotNull]
+        [JsonProperty("name")]
         public string Name { get; set; }
+        [JsonProperty("days")]
         public int Days { get; set; }
     }
 }

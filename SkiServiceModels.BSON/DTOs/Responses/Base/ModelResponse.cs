@@ -8,6 +8,7 @@ namespace SkiServiceModels.BSON.DTOs.Responses.Base
 {
     public abstract class ModelResponse : IModel
     {
+        [JsonProperty("id")]
         public required string Id { get; set; }
         ObjectId IModel.Id
         {
@@ -16,6 +17,7 @@ namespace SkiServiceModels.BSON.DTOs.Responses.Base
         }
 
         [AdminOnly]
+        [JsonProperty("is_deleted")]
         public bool? IsDeleted { get; set; } = null;
 
         bool IModelBase.IsDeleted

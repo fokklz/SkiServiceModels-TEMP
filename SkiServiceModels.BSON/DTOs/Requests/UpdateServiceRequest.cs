@@ -4,7 +4,6 @@ using SkiServiceModels.BSON.DTOs.Requests.Base;
 using SkiServiceModels.BSON.Interfaces;
 using SkiServiceModels.BSON.Models;
 using SkiServiceModels.Interfaces.Models;
-using System.Diagnostics.CodeAnalysis;
 
 namespace SkiServiceModels.BSON.DTOs.Requests
 {

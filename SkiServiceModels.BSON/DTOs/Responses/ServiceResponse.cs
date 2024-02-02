@@ -13,9 +13,14 @@ namespace SkiServiceModels.BSON.DTOs.Responses
     public class ServiceResponse : ModelResponse, IService, IResponseDTO
     {
         [AllowNull, NotNull]
+        [JsonProperty("description")]   
         public string Description { get; set; }
+
         [AllowNull, NotNull]
+        [JsonProperty("name")]
         public string Name { get; set; }
+
+        [JsonProperty("price")]
         public int Price { get; set; }
     }
 }
