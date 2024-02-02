@@ -37,11 +37,5 @@ namespace SkiServiceModels.BSON.DTOs.Requests
             get => Name ?? string.Empty;
             set => Name = value;
         }
-
-        int IServiceBase.Price
-        {
-            get => Price ?? 0;
-            set => Price = value;
-        }
     }
 }
