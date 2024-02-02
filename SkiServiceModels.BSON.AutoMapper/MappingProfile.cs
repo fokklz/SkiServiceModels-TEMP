@@ -38,6 +38,11 @@ namespace SkiServiceModels.BSON.AutoMapper
         {
             CreateMap<TSrc, TDest>().ForAllMembers(opts => opts.Condition((src, dest, srcMember, destMember, context) =>
             {
+                if (srcMember == null)
+                {
+                    return false;
+                }
+
                 DTOParseOptions dtoOptions;
 
                 var targetType = source ? src?.GetType() : dest?.GetType();
