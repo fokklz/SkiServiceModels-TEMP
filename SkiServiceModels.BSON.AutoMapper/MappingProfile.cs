@@ -60,8 +60,9 @@ namespace SkiServiceModels.BSON.AutoMapper
                     dtoOptions = new DTOParseOptions();
                 }
 
-                return ModelUtils.IsAllowed(targetProperty, dtoOptions);
+                return ModelUtils.IsAllowed(targetProperty, dtoOptions) && srcMember != null;
             }));
+
         }
     }
 }

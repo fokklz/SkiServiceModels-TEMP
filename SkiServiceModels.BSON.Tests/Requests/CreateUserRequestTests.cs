@@ -50,7 +50,8 @@ namespace SkiUserModels.BSON.Tests.Requests
             var request = new CreateUserRequest
             {
                 Username = "Test",
-                Role = RoleNames.SuperAdmin                
+                Role = RoleNames.SuperAdmin,
+                Password = "Test"
             };
 
             var mapped = _mapper.Map<User>(request);
@@ -65,7 +66,8 @@ namespace SkiUserModels.BSON.Tests.Requests
             var request = new CreateUserRequest
             {
                 Username = "Test",
-                Role = RoleNames.SuperAdmin
+                Role = RoleNames.SuperAdmin,
+                Password = "Test"
             };
 
             var mapped = _mapper.Map<User>(request, opts =>

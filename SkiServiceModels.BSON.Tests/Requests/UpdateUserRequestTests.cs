@@ -57,7 +57,7 @@ namespace SkiServiceModels.BSON.Tests.Requests
                 IsDeleted = true,
                 Username = "Test",
                 Locked = true,
-                Role = RoleNames.SuperAdmin,
+                Role = RoleNames.SuperAdmin
             };
 
             var mapped = _mapper.Map<User>(request);

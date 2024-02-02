@@ -24,7 +24,7 @@ namespace SkiServiceModels.BSON.DTOs.Requests
         public bool? Locked { get; set; } = null;
 
         [JsonProperty("password")]
-        public required string Password { get; set; }
+        public string? Password { get; set; } = null;
 
         // Implemented properties but with allowed null values
 
